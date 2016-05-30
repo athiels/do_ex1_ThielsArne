@@ -1,5 +1,7 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.hostname = arneThiels.be
-  config.vm.network "forwarded_port", guest: 80, host: 1234
+  config.vm.hostname = "arneThiels.be"
+  config.vm.network "forwarded_port", guest: 80, host: 5555
+  config.vm.provision "shell", inline: "echo hello"
+  config.vm.provision "shell", path: "provision_apache.sh"
 end
