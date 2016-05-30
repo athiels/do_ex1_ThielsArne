@@ -4,4 +4,5 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 80, host: 5555
   config.vm.provision "shell", inline: "echo hello"
   config.vm.provision "shell", path: "provision_apache.sh"
+  config.vm.provision "shell", path: "provision_php.sh"
 end
